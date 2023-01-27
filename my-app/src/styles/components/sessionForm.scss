@@ -1,0 +1,209 @@
+.session-form {
+    background-color: $Color-card-background;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    opacity: 0.9;
+    margin: auto;
+
+
+    .name-container {
+        position: absolute;
+        top: 18%;
+        left: 10%;
+        width: 30%;
+        transform: translate(0%, -50%);
+
+        input {
+            width: 100%;
+            border: solid 3px $Color-input-border;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+
+
+        }
+    }
+
+    .activity-container {
+        position: absolute;
+        top: 18%;
+        right: 10%;
+        width: 30%;
+        transform: translate(0%, -50%);
+
+        select,
+        select option[value] {
+            border: solid 3px $Color-input-border;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+    }
+
+    .plan-date-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 36%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $Color-confirm;
+        width: 55%;
+        height: 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 5px;
+
+        p {
+            font-size: 0.8em;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    .react-date-picker__wrapper {
+        border: solid 3px $Color-input-border;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    // Icones
+
+    .add-session {
+        text-shadow: 0 0 10px blue;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        cursor: pointer;
+
+    }
+
+    .close-add-session {
+        color: $Color-input-border;
+        font-size: 30px;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .error {
+        color: red;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .confirm-container {
+        background-color: $Color-confirm;
+        margin: auto;
+        width: 40%;
+        height: 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 5px;
+        position: absolute;
+        top: 83%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+        .confirm {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 30px;
+            cursor: pointer;
+
+        }
+    }
+
+    .react-date-picker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+
+
+
+}
+
+.display-none {
+    display: none;
+}
+
+@keyframes add-session-focused {
+
+    0% {
+
+        // top: 0;
+        // left: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    100% {
+
+        // top: 50%;
+        // left: 50%;
+        width: 400px;
+        height: 400px;
+        //  transform: translate(-50%, -50%);
+    }
+
+}
+
+
+
+
+.session-form-focused {
+    // 
+    // top: 50%;
+    // left: 50%;
+
+
+    // transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 1;
+    animation: add-session-focused 0.5s ease-in-out;
+    animation-fill-mode: forwards
+}
+
+
+.session-form-unfocused {
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transform: scale(1.05);
+        transition: all 0.3s;
+
+    }
+}

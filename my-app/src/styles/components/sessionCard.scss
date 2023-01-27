@@ -1,0 +1,118 @@
+.session-card {
+    background-color: $Color-card-background;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 20px;
+    margin: 40px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transform: scale(1.05);
+        transition: all 0.3s;
+    }
+
+    h3,
+    h4 {
+        text-align: center;
+    }
+
+    h3 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+
+    //session statue
+    .session-statue {
+        position: absolute;
+        top: 8%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.9;
+        width: 90%;
+        height: 35px;
+        border-radius: 3px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+
+
+        p {
+            margin-left: 10%;
+            font-weight: 900;
+        }
+
+
+    }
+
+
+
+    .completed {
+        background-color: $Color-confirm;
+    }
+
+    .cancelled {
+        background-color: #E26B64;
+    }
+
+    .planned {
+        background-color: grey;
+    }
+
+
+    .edit-icon {
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+    }
+
+    .date-section {
+        display: flex;
+        align-items: center;
+        background-color: $color-date-background;
+        color: $color-date;
+        position: absolute;
+        width: 90%;
+        height: 35px;
+        border-radius: 3px;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        span {
+            font-size: 0.8em;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 8px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .icon {
+            margin-left: 10px;
+        }
+
+    }
+}

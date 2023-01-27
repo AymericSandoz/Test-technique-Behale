@@ -1,0 +1,50 @@
+.profil {
+
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    h2 {
+        text-align: center;
+    }
+
+    .date-filter {
+        background-color: $Color-card-background;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        padding: 20px;
+        margin: 20px;
+        height: 50px;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        position: absolute;
+        top: 17%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+
+        .icon {
+            cursor: pointer;
+            margin: 3px;
+
+        }
+
+        .week-count {
+            font-weight: 800;
+        }
+    }
+
+    .sessions-container {
+        padding: 20px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    }
+
+}

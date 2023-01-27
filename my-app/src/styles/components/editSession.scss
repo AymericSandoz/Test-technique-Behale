@@ -1,0 +1,18 @@
+.edit-session {
+    position: absolute;
+    top: 90%;
+    left: 5%;
+
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    transform: translate(0%, -50%);
+
+
+
+    .icon:hover {
+        cursor: pointer;
+    }
+
+}
