@@ -79,4 +79,6 @@ Il s'agit d'une application de fitness permettant à l'utiliser de plannifier, c
 - Responsive non mis en place
 - Design et nottament choix des couleurs plus harmonieux
 - Gestion des edge Case (ex : Utilisateur ne peut compléter qu'une fois une séance etc)
-- Plus d'information pour l'utilisateur. Par exemple lorsqu'il complète ou annule séance.
+- Plus d'information pour l'utilisateur. Par exemple lorsqu'il complète ou annule séance
+- Gestion du temps de chargement de la page d'acceuil
+- Un seul utilisateur prédifini pour l'instant(on aurait pu mettre son userID dans .env)

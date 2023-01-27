@@ -19,7 +19,10 @@ const SessionForm = ({ getSessions }) => {
 
   const [selectedSport, setSelectedSport] = useState(null);
 
+  //Planifier une session
+
   const addSession = () => {
+    //gestion des erreurs
     if (!sessionName || !selectedSport) {
       setError("Fields Name and Activity are mandotary");
       return;
@@ -38,7 +41,7 @@ const SessionForm = ({ getSessions }) => {
         setIsAddingSession(!isAddingSession);
         getSessions();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); //Il sera nécessaire d'afficher une erreur pour la compréhension de l'utilisateur
   };
 
   return (

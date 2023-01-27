@@ -4,14 +4,13 @@ const router = express.Router(); //création d'un routeur express dans lequel on
 //Importation controllers
 const stuffCtrl = require("../controllers/user");
 
-//Routes
+//Routes user
 
-router.get("/getUserPoints", stuffCtrl.getUserPoints); //Création de post
+router.get("/getUserPoints", stuffCtrl.getUserPoints); //récupération des points de l'utilisateur
 router.get(
   "/getUserNbOfCompletedSessions",
   stuffCtrl.getUserNbOfCompletedSessions
-);
-router.get("/getWeekGoal", stuffCtrl.getWeekGoal);
-router.post("/defineWeekGoal", stuffCtrl.defineWeekGoal);
-
+); //récupération  du nb de session complété par l'utilisateur
+router.get("/getWeekGoal", stuffCtrl.getWeekGoal); //récupération du weekgoal
+router.post("/defineWeekGoal", stuffCtrl.defineWeekGoal); //définition du weekgoal
 module.exports = router;

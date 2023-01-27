@@ -37,40 +37,6 @@ const UpdateSession = ({ session, getSessions, editActionDone }) => {
       .catch((err) => console.log(err));
   };
 
-  //   return (
-
-  //   {
-  /* <input
-        name="sessionName"
-        id="sessionName"
-        placeholder={sessionName}
-        onChange={(e) => setSessionName(e.target.value)}
-      />
-
-      <div>
-        <select onChange={(e) => setSelectedSport(e.target.value)}>
-          <option value="">{selectedSport}</option>
-          {Object.values(sports).map((sport) => (
-            <option key={sport.name} value={sport.name}>
-              {sport.name}
-            </option>
-          ))}
-        </select>
-        {selectedSport && <p>{selectedSport.description}</p>}
-      </div>
-      <p>{session.statue} </p>
-      <DatePicker
-        value={
-          typeof sessionDate === "string" ? new Date(sessionDate) : sessionDate
-        }
-        onChange={(date) => setSessionDate(date)}
-      />
-
-      <button onClick={() => update()}>Update</button> */
-  //   }
-
-  //   );
-
   return (
     <>
       <div

@@ -4,12 +4,12 @@ const router = express.Router(); //création d'un routeur express dans lequel on
 //Importation controllers
 const stuffCtrl = require("../controllers/session");
 
-//Routes
+//Routes session
 
-router.post("/", stuffCtrl.createSession); //Création de post
-router.get("/", stuffCtrl.getSessions); //Création de post
-router.put("/update/:id", stuffCtrl.updateSession); //Création de post
-router.put("/complete/:id", stuffCtrl.completeSession); //Création de post
-router.put("/cancel/:id", stuffCtrl.cancelSession); //Création de post
+router.post("/", stuffCtrl.createSession); //Création de session
+router.get("/", stuffCtrl.getSessions); //récupération des sessions
+router.put("/update/:id", stuffCtrl.updateSession); //modification de session
+router.put("/complete/:id", stuffCtrl.completeSession); //compléter une session
+router.put("/cancel/:id", stuffCtrl.cancelSession); //annuler une session
 
 module.exports = router; //exportations de notre routeur

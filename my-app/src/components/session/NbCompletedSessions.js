@@ -20,7 +20,6 @@ const NbOfCompletedSessions = ({ sessions }) => {
       url: `http://localhost:5000/api/user/getUserNbOfCompletedSessions/`,
     })
       .then((res) => {
-        console.log("Nb of completed session : ", res.data);
         setNbCompletedSession(res.data.nbCompletedSessions);
         setLoadNbCmptSession(false);
       })

@@ -2,7 +2,6 @@ const Session = require("../models/session");
 const User = require("../models/user");
 
 exports.createSession = (req, res) => {
-  console.log(req.body);
   const userId = "63d1365e4b6c45736973eebf";
   var session = new Session({
     name: req.body.name,
@@ -36,7 +35,6 @@ exports.createSession = (req, res) => {
 };
 
 exports.getSessions = (req, res) => {
-  console.log("getSessions");
   Session.find((err, docs) => {
     if (!err) res.send(docs);
     else res.send("Erreur :" + err);

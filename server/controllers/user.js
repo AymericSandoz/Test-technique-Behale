@@ -2,10 +2,10 @@ const User = require("../models/user");
 const Session = require("../models/session");
 
 exports.getUserPoints = (req, res) => {
-  console.log("getPoints ");
   const userId = "63d1365e4b6c45736973eebf";
 
   User.findOne({ _id: userId }, function (err, user) {
+    //Fonction qui calcule la somme des points de l'utilisateurs
     let sum = 0;
     const Sum = (array) => {
       for (let i = 0; i < array.length; i++) {
@@ -14,18 +14,15 @@ exports.getUserPoints = (req, res) => {
       return sum;
     };
     if (!err) {
-      console.log("eeeeees");
       const points = Sum(user.points);
       res.status(200).json({ points });
     } else {
-      console.log("erreur:", err);
       res.status(500).json({ error: err });
     }
   });
 };
 
 exports.getUserNbOfCompletedSessions = (req, res) => {
-  console.log("getUserNbOfCompletedSessions");
   const userId = "63d1365e4b6c45736973eebf";
 
   Session.find(
@@ -39,7 +36,6 @@ exports.getUserNbOfCompletedSessions = (req, res) => {
 };
 
 exports.getWeekGoal = (req, res) => {
-  console.log("getWeekGoal");
   const userId = "63d1365e4b6c45736973eebf";
 
   User.findOne({ userId: userId }, function (err, user) {
@@ -53,8 +49,6 @@ exports.getWeekGoal = (req, res) => {
 };
 
 exports.defineWeekGoal = (req, res) => {
-  console.log("defineWeekGoal");
-  console.log(req.body.weekGoalInput);
   const userId = "63d1365e4b6c45736973eebf";
 
   User.updateOne({ _id: userId }, { weeklyGoal: req.body.weekGoalInput })

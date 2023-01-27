@@ -6,6 +6,7 @@ import {
   faPaperclip,
   faPaperPlane,
   faPenClip,
+  faPlane,
   faSquareCheck,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +19,7 @@ const WeeklyGoal = ({ sessions }) => {
 
   const [error, setError] = useState(false);
 
+  //Récupération du weekgoal
   const getWeekGoal = () => {
     axios({
       method: "get",
@@ -31,6 +33,7 @@ const WeeklyGoal = ({ sessions }) => {
       .catch((err) => console.log(err));
   };
 
+  //définition du weekgoal
   const defineWeekGoal = () => {
     if (weekGoalInput < 11 && weekGoalInput > 3) {
       axios({
@@ -55,55 +58,7 @@ const WeeklyGoal = ({ sessions }) => {
     }
   }, [weekGoal]);
 
-  // return (
-  //   <div className="user-week-goal">
-  //     {weekGoal != "undefined" ? (
-
-  //       <>
-  //         <p> Weekly Goal : </p>
-  //         <span className="week-goal">{weekGoal}</span>
-  //         <FontAwesomeIcon
-  //           icon={faPenClip}
-  //           className="user-pen-icon icon"
-  //         />{" "}
-  //       </>
-  //     ) : (
-  //       <div onClick={() => [setDisplayWeekgoalInput(true)]}>
-  //         {!displayWeekgoalInput ? (
-  //           <>
-  //             <p>Define your weekly goal</p>
-  //             <FontAwesomeIcon
-  //               icon={faPenClip}
-  //               className="user-pen-icon icon"
-  //             />
-  //           </>
-  //         ) : (
-  //           <>
-  //             <input
-  //               name="weekGoal"
-  //               id="weekGoal"
-  //               type="number"
-  //               min="3"
-  //               max="10"
-  //               placeholder="Your week Goal"
-  //               onChange={(e) => setWeekGoalInput(e.target.value)}
-  //             />
-
-  //             <button
-  //               className="user-pen-icon icon"
-  //               onClick={() => [defineWeekGoal()]}
-  //             >
-  //               send
-  //             </button>
-  //           </>
-  //         )}
-  //       </div>
-  //     )}
-
-  //     {error && <p>{error}</p>}
-  //   </div>
-  // );
-
+  //Affichage dépendant de si weekgoal est déja défini et si l'utilisateur a cliqué sur la section
   return (
     <div className="user-week-goal">
       {!displayWeekgoalInput && weekGoal != undefined && (
@@ -136,9 +91,12 @@ const WeeklyGoal = ({ sessions }) => {
             placeholder="Your week Goal"
             onChange={(e) => setWeekGoalInput(e.target.value)}
           />
-          {error && (
-            <FontAwesomeIcon icon={faXmark} className="user-plane-icon icon" />
-          )}
+
+          <FontAwesomeIcon
+            icon={faPaperPlane}
+            className="user-plane-icon icon"
+            onClick={() => defineWeekGoal()}
+          />
         </div>
       )}
     </div>

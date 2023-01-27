@@ -24,41 +24,19 @@ const Home = () => {
   const [isUptaded, setIsUpdated] = useState(false);
   const [weekCount, setWeekCount] = useState(
     parseInt(parseFloat(moment(new Date()).format("w")))
-  );
-
-  //   const filterSessionByWeeks = (array) => {
-  //     let newArray = [];
-  //     const today = new Date();
-  //     let thisWeek = parseInt(parseFloat(moment(today).format("w")));
-  //     console.log(weekCount);
-  //     array.forEach((session) => {
-  //       let weekFiltered = moment(session.date).format("w"); //week session
-  //       let weekFiltered_nb = parseInt(parseFloat(weekFiltered)); //week session formated to number
-
-  //       let weekToFilter = thisWeek + weekCount;
-  //       console.log("weekToFilter", weekToFilter);
-  //       console.log("weekFiltered_nb", weekFiltered_nb);
-  //       if (weekFiltered_nb === weekToFilter) {
-  //         newArray.push(session);
-  //       }
-  //     });
-  //     console.log(newArray);
-  //     return newArray;
-  //   };
+  ); //Permet d'obtenir la date actuelle au format semaine convertir en Int. Par exemple la 4eme semaine de janvier c'est 4
 
   const getSessions = () => {
     axios
       .get("http://localhost:5000/api/session")
       .then((res) => {
-        // setSessions(filterSessionByWeeks(res.data));
         setSessions(res.data);
         setLoadSessions(false);
       })
-      .catch((err) =>
-        console.log("requête axios de getPosts ne fonctionne pas :" + err)
-      );
+      .catch((err) => console.log("erreur : " + err));
   };
 
+  //Permet d'afficher une fois les sessions quand le page se charge et les réafficher si elles sont modifiés
   useEffect(() => {
     if (loadSessions) {
       getSessions();
@@ -102,6 +80,7 @@ const Home = () => {
         <div className="sessions-container">
           <h2> My Sessions</h2>
           <ul>
+            {/* Permet d'afficher toutes les sessions en fonction de la semaine */}
             {sessions.length > 0 &&
               sessions.map((session) => {
                 if (moment(session.date).format("w") == weekCount) {
