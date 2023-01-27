@@ -74,11 +74,13 @@ nodemon index
 Ce projet a été réalisé en 1 journée dans le cadre d'une recherche d'alternance pour la société Behale. La slack utilisé est NodeJs, React et Mongo Db.
 Il s'agit d'une application de fitness permettant à l'utiliser de plannifier, compléter et/ou annuler des séances.
 
-#### Remarques. Il reste beaucoup de points à améliorer, quelques examples :
+#### Examples de points à améliorer avec plus de temps :
 
 - Responsive non mis en place
-- Design et nottament choix des couleurs plus harmonieux
-- Gestion des edge Case (ex : Utilisateur ne peut compléter qu'une fois une séance etc)
+- Design et nottament choix des couleurs plus complet et harmonieux
+- Gestion des edges Cases (ex : Utilisateur ne peut compléter qu'une fois une séance etc)
 - Plus d'information pour l'utilisateur. Par exemple lorsqu'il complète ou annule séance
-- Gestion du temps de chargement de la page d'acceuil
-- Un seul utilisateur prédifini pour l'instant(on aurait pu mettre son userID dans .env)
+- Meilleure gestion du chargement de la page d'acceuil. Certains élements apparaissent puis disparaissent très rapidement
+- Un seul utilisateur prédifini pour l'instant(Il aurait été préférable de mettre son userID dans .env)
+- Meilleure gestion des erreurs
+- Meilleure animation css au niveau de l'ouverture des cartes
